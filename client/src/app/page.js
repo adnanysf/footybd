@@ -12,7 +12,6 @@ export default function Home() {
 
   const handlePredict = () => {
     if (selectedTeam1 && selectedTeam2 && selectedTeam1 !== selectedTeam2) {
-      // Simple random prediction for demo
       const winner = Math.random() > 0.5 ? selectedTeam1 : selectedTeam2;
       setPrediction(`Predicted winner: ${winner}`);
     } else {
@@ -21,30 +20,28 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div style={{height:"200vh"}} className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex flex-col items-center ">
       {/* Header with glassmorphism effect */}
-      <div className="backdrop-blur-sm bg-white/10 border-b border-white/20">
+      <div className="backdrop-blur-sm bg-white/10 border-b border-white/20 w-full flex items-center justify-center">
         <div className="container mx-auto px-6 py-8">
-          <h1 className="text-5xl font-bold text-center text-white mb-2">
+          <h1 className="text-5xl font-bold text-center text-white mb-2 w-full">
             FootyBD
           </h1>
-          <p className="text-center text-purple-200 text-lg">
+          <p className="text-center text-blue-200 text-lg">
             Your Ultimate Football Dashboard
           </p>
         </div>
       </div>
 
       {/* Main Content Area */}
-      <div className="container mx-auto px-6 py-12">
-        <div className="flex flex-row gap-8 mb-16">
+      <div style={{border:"10px solid red"}} className="container mx-auto px-6 py-12 w-full h-full flex flex-col items-center">
+        <div style={{border:"10px solid black"}} className="flex flex-row gap-8 mb-16 w-full h-1/2">
           {/* Left Side - Tables */}
           <div className="w-1/2 space-y-8">
             {/* League Table */}
             <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl hover:bg-white/20 transition-all duration-300">
               <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mr-4"></div>
                 <h2 className="text-2xl font-bold text-white">League Table</h2>
-                <div className="w-12 h-1 bg-gradient-to-r from-pink-400 to-purple-400 ml-4"></div>
               </div>
               <div className="bg-black/20 backdrop-blur-sm p-6 rounded-xl border border-purple-500/30">
                 <p className="text-purple-200 text-center">League table data will go here...</p>
@@ -54,9 +51,7 @@ export default function Home() {
             {/* Top Scorers */}
             <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl hover:bg-white/20 transition-all duration-300">
               <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-1 bg-gradient-to-r from-green-400 to-blue-400 mr-4"></div>
                 <h2 className="text-2xl font-bold text-white">Top Scorers</h2>
-                <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-green-400 ml-4"></div>
               </div>
               <div className="bg-black/20 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30">
                 <p className="text-blue-200 text-center">Top scorers data will go here...</p>
@@ -66,9 +61,7 @@ export default function Home() {
             {/* Upcoming Matches */}
             <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl hover:bg-white/20 transition-all duration-300">
               <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-1 bg-gradient-to-r from-orange-400 to-red-400 mr-4"></div>
                 <h2 className="text-2xl font-bold text-white">Upcoming Matches</h2>
-                <div className="w-12 h-1 bg-gradient-to-r from-red-400 to-orange-400 ml-4"></div>
               </div>
               <div className="bg-black/20 backdrop-blur-sm p-6 rounded-xl border border-orange-500/30">
                 <p className="text-orange-200 text-center">Upcoming matches data will go here...</p>
@@ -77,12 +70,10 @@ export default function Home() {
           </div>
 
           {/* Right Side - Match Predictor */}
-          <div className="w-1/2">
-            <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl sticky top-8 hover:bg-white/20 transition-all duration-300">
+          <div className="w-full">
+            <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl top-8 transition-all duration-300">
               <div className="flex items-center justify-center mb-8">
-                <div className="w-12 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mr-4"></div>
                 <h2 className="text-2xl font-bold text-white">Match Predictor</h2>
-                <div className="w-12 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 ml-4"></div>
               </div>
               
               {/* Team Selection */}
@@ -102,7 +93,7 @@ export default function Home() {
                 </div>
 
                 <div className="text-center py-4">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-lg">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full shadow-lg">
                     <span className="text-white font-bold text-xl">VS</span>
                   </div>
                 </div>
@@ -123,7 +114,7 @@ export default function Home() {
 
                 <button 
                   onClick={handlePredict}
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-blue-500 transform transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
                 >
                   🔮 Predict Winner
                 </button>
@@ -139,14 +130,11 @@ export default function Home() {
         </div>
 
         {/* Search Section */}
-        <div className="flex gap-8">
-          {/* Right Side - Search Interface */}
+        <div className="flex gap-8 w-full justify-center items-center">
           <div className="w-1/2">
             <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl hover:bg-white/20 transition-all duration-300">
               <div className="flex items-center justify-center mb-8">
-                <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mr-4"></div>
                 <h2 className="text-2xl font-bold text-white">Search Players & Teams</h2>
-                <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 ml-4"></div>
               </div>
               
               <div className="space-y-6">
@@ -171,23 +159,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Left Side - Search Results/Table View */}
-          <div className="w-1/2">
-            <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl hover:bg-white/20 transition-all duration-300">
-              <div className="flex items-center justify-center mb-8">
-                <div className="w-12 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 mr-4"></div>
-                <h2 className="text-2xl font-bold text-white">Search Results</h2>
-                <div className="w-12 h-1 bg-gradient-to-r from-teal-400 to-emerald-400 ml-4"></div>
-              </div>
-              <div className="bg-black/20 backdrop-blur-sm p-8 rounded-xl border border-emerald-500/30 min-h-[200px] flex items-center justify-center">
-                {searchQuery ? (
-                  <p className="text-emerald-200 text-center text-lg">Search results for "<span className="font-semibold text-emerald-300">{searchQuery}</span>" will appear here...</p>
-                ) : (
-                  <p className="text-emerald-200 text-center text-lg">Enter a search query to see results...</p>
-                )}
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
