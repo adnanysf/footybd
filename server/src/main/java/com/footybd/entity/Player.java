@@ -1,5 +1,6 @@
 package com.footybd.entity;
 
+import com.footybd.entity.enums.Position;
 import jakarta.persistence.*;
 import lombok.Data;
 
