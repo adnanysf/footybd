@@ -28,7 +28,7 @@ export default function Home() {
             FootyBD
           </h1>
           <p className="text-center text-blue-200 text-lg">
-            Your Ultimate Football Dashboard
+            Your Ultimate BPL Dashboard
           </p>
         </div>
       </div>
